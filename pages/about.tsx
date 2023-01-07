@@ -49,7 +49,7 @@ export default function Page() {
                                         I&apos;m currently working for LaunchDarkly, however I&apos;m always open to discussion.
                                         Check out my{" "}
                                         <Link
-                                            href="/resume"
+                                            href="/experience"
                                             className="text-gray-800 border-b-2 border-gray-800 font-bold"
                                         >
                                             history and experience
@@ -64,7 +64,7 @@ export default function Page() {
                                 <div className="mt-4 ml-4">
                                     <div className="flex flex-row justify-start items-center">
                                         <a
-                                            href="/go/github"
+                                            href="https://go.behn.dev/github"
                                             className="flex flex-row items-center space-x-4 group"
                                         >
                                             <div className="my-4">&rarr;</div>
@@ -76,7 +76,7 @@ export default function Page() {
                                     </div>
                                     <div className="flex flex-row justify-start items-center">
                                         <a
-                                            href="/go/linkedin"
+                                            href="https://go.behn.dev/linkedin"
                                             className="flex flex-row items-center space-x-4 group"
                                         >
                                             <div className="my-4">&rarr;</div>
@@ -88,7 +88,7 @@ export default function Page() {
                                     </div>
                                     <div className="flex flex-row justify-start items-center">
                                         <a
-                                            href="/go/keybase"
+                                            href="https://go.behn.dev/keybase"
                                             className="flex flex-row items-center space-x-4 group"
                                         >
                                             <div className="my-4">&rarr;</div>
@@ -100,7 +100,7 @@ export default function Page() {
                                     </div>
                                     <div className="flex flex-row justify-start items-center">
                                         <a
-                                            href="/go/spotify"
+                                            href="https://go.behn.dev/spotify"
                                             className="flex flex-row items-center space-x-4 group"
                                         >
                                             <div className="my-4">&rarr;</div>
@@ -112,7 +112,7 @@ export default function Page() {
                                     </div>
                                     <div className="flex flex-row justify-start items-center">
                                         <a
-                                            href="/go/lastfm"
+                                            href="https://go.behn.dev/lastfm"
                                             className="flex flex-row items-center space-x-4 group"
                                         >
                                             <div className="my-4">&rarr;</div>
