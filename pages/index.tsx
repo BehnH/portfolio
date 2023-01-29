@@ -7,13 +7,13 @@ export default function Page() {
                 <div className="flex flex-row justify-center items-start overflow-hidden">
                     <div className="w-full md:w-1/2 mx-auto text-center md:text-left lg:p-20 font-bold text-gray-800">
                         <h1 className="text-4xl md:text-8xl my-2">
-                            Developer.
+                            Software Engineer.
                         </h1>
                         <h1 className="text-4xl md:text-8xl my-2">
-                            Systems Engineer.
+                            Breaker of things.
                         </h1>
                         <h1 className="text-4xl md:text-8xl my-2">
-                            Solutions Designer.
+                            Consumer of coffee.
                         </h1>
                     </div>
                     {/* Image container */}
