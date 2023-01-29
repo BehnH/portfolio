@@ -130,7 +130,7 @@ export default function Page() {
                                     I&apos;m a passionate Technical Support Engineer and Software engineer - I&apos;ve been really interested in emerging technologies since a very young age, which has helped me to develop a broad range of skills across many different technical disciplines.<br /><br />
                                     I commonly write code in Typescript as it&apos;s super simple for me to use, however in recent times I have been moving some of my personal projects to GoLang so I can broaden my skills and knowledge.<br /><br />
                                     I&apos;ve developed applications which use MongoDB, MySQL, PostgreSQL, RabbitMQ, Apache Kafka, Redis and many more tools, across many different platforms, such as AWS, Oracle Cloud, Self-hosted Docker and more.<br /><br />
-                                    Outside of work, I listen to copious amounts of music, read, play games, and spend time with my dog. Feel free to check out what I&apos;m listening to by heading to my <Link href={'/pages/listening'}>Listening Dashboard</Link>.
+                                    Outside of work, I listen to copious amounts of music, read, play games, and spend time with my dog. Feel free to check out what I&apos;m listening to by heading to my <Link href={'/listening'}>Listening Dashboard</Link>.
                                 </p>
                             </div>
                         </div>
