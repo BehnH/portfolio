@@ -8,11 +8,11 @@ export default function Page() {
             <ContainerBlock>
                 <section className="bg-white">
                     <div className="max-w-6xl mx-auto h-48 bg-white">
-                        <h1 className=" text-5xl md:text-9xl font-bold py-20 text-center md:text-left">
+                        <h1 className="text-5xl md:text-9xl font-bold py-20 text-center md:text-left underline decoration-[#bbf7d0] decoration-wavy decoration-4">
                             About Me.
                         </h1>
                     </div>
-                    <div className="bg-[#F1F1F1] -mt-10">
+                    <div>
                         <div className="text-container max-w-6xl mx-auto pt-20">
                             <p
                                 className="leading-loose text-2xl md:text-4xl font-semibold  mx-4"
@@ -22,16 +22,16 @@ export default function Page() {
                             </p>
                         </div>
                     </div>
-                    <div className="bg-[#F1F1F1] px-4">
+                    <div >
                         <div className="pt-20 grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto gap-y-20 gap-x-20">
                             {/* Social Buttons */}
                             <div className="inline-flex flex-col">
                                 <div>
-                                    <h1 className="text-xl font-semibold text-gray-700">
+                                    <h1 className="text-xl font-semibold text-gray-700 underline decoration-[#bbf7d0] decoration-4">
                                         Contact
                                     </h1>
                                     <p className="text-lg text-gray-500 mt-4">
-                                        For any sort enquiry, shoot me an {" "}
+                                        For any sort of enquiry, shoot me an {" "}
                                         <a
                                             href={`mailto:hello@behn.dev?subject=Hey`}
                                             className="text-gray-800 border-b-2 border-gray-800 font-bold"
@@ -42,7 +42,7 @@ export default function Page() {
                                     </p>
                                 </div>
                                 <div className="mt-8">
-                                    <h1 className="text-xl font-semibold text-gray-700">
+                                    <h1 className="text-xl font-semibold text-gray-700 underline decoration-[#bbf7d0] decoration-4">
                                         Job Opportunities
                                     </h1>
                                     <p className="text-lg text-gray-500 mt-4">
@@ -58,7 +58,7 @@ export default function Page() {
                                     </p>
                                 </div>
                                 {/* Social Links */}
-                                <h1 className="text-xl font-semibold text-gray-700 mt-8">
+                                <h1 className="text-xl font-semibold text-gray-700 mt-8 underline decoration-[#bbf7d0] decoration-4">
                                     Social Links
                                 </h1>
                                 <div className="mt-4 ml-4">

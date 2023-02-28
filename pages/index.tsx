@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ContainerBlock } from "../components/Base";
 
 export default function Page() {
@@ -19,7 +20,7 @@ export default function Page() {
                     {/* Image container */}
                     <div className="hidden lg:block relative w-full md:w-1/2 -mr-40 mt-20">
                         <div className="w-3/4 ">
-                            <img src="/wordmark.png" alt="avatar" className="shadow" />
+                            <Image src="/wordmark.png" alt="avatar" className="shadow" width={475.5} height={475.5} />
                             <div className="flex flex-row justify-between mt-4">
                                 <div className="flex flex-row space-x-4">
                                     <svg

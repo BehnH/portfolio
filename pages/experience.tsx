@@ -42,11 +42,11 @@ export default function Page() {
             <ContainerBlock>
                 <section className="bg-white">
                     <div className="max-w-6xl mx-auto h-48 bg-white">
-                        <h1 className=" text-5xl md:text-9xl font-bold py-20 text-center md:text-left">
+                        <h1 className="text-5xl md:text-9xl font-bold py-20 text-center md:text-left underline decoration-[#bbf7d0] decoration-wavy decoration-4">
                             Experience
                         </h1>
                     </div>
-                    <div className="bg-[#F1F1F1] -mt-4">
+                    <div>
                         <div className="grid grid-cols-1 max-w-xl mx-auto pt-20">
                             {/* Experience card */}
                             {jobHistory.map((exp, idx) => (
