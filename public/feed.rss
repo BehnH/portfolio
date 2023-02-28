@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Behn's Blog | RSS Feed</title>
+        <link>https://www.behn.dev</link>
+        <description>A blog about programming, coffe, life, and other things.</description>
+        <lastBuildDate>Sun, 26 Feb 2023 09:49:34 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Next.js using Feed for Node.js</generator>
+        <image>
+            <title>Behn's Blog | RSS Feed</title>
+            <url>https://www.behn.dev/wordmark.png</url>
+            <link>https://www.behn.dev</link>
+        </image>
+        <copyright>All rights reserved.</copyright>
+    </channel>
+</rss>

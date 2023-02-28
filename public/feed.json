@@ -1,0 +1,9 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Behn's Blog | RSS Feed",
+    "home_page_url": "https://www.behn.dev",
+    "feed_url": "https://www.behn.dev/feed.json",
+    "description": "A blog about programming, coffe, life, and other things.",
+    "icon": "https://www.behn.dev/wordmark.png",
+    "items": []
+}

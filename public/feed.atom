@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.behn.dev</id>
+    <title>Behn's Blog | RSS Feed</title>
+    <updated>2023-02-26T09:49:34.105Z</updated>
+    <generator>Next.js using Feed for Node.js</generator>
+    <link rel="alternate" href="https://www.behn.dev"/>
+    <link rel="self" href="https://www.behn.dev/feed.atom"/>
+    <subtitle>A blog about programming, coffe, life, and other things.</subtitle>
+    <logo>https://www.behn.dev/wordmark.png</logo>
+    <icon>https://www.behn.dev/favicon/favicon.ico</icon>
+    <rights>All rights reserved.</rights>
+</feed>
