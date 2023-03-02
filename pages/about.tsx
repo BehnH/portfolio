@@ -15,7 +15,7 @@ export default function Page() {
                     <div>
                         <div className="text-container max-w-6xl mx-auto pt-20">
                             <p
-                                className="leading-loose text-2xl md:text-4xl font-semibold  mx-4"
+                                className="leading-loose text-2xl md:text-4xl font-semibold mx-4"
                                 style={{ lineHeight: "3rem" }}
                             >
                                 Hey 👋, I&apos;m Behn - a passionate Support Engineer and Software Engineer with a strong history in the Technology industry.
