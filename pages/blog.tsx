@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReadTimeResults } from 'reading-time';
 import { ContainerBlock } from "../components/Base";
@@ -37,6 +38,20 @@ export default function Blog({ posts }: { posts: Post[] }) {
                                     </h1>
                                 </>
                             )}
+                            {posts.map((post) => {
+                                return (
+                                    <>
+                                        <BlogCard
+                                            title={post.title}
+                                            description={post.description}
+                                            date={post.date}
+                                            tags={post.tags}
+                                            slug={post.slug}
+                                            readingTime={post.readingTime}
+                                        />
+                                    </>
+                                )
+                            })}
                         </div>
                     </div>
                 </section>
@@ -60,10 +75,24 @@ function BlogCard({ title, description, date, tags, slug, readingTime }: BlogCar
             <div className="flex flex-col">
                 <div className="flex flex-row">
                     <div className="flex flex-col">
-                        <h1 className="text-xl font-semibold text-gray-700">
-                            {title}
-                        </h1>
-                        <p className="text-lg text-gray-500 mt-4">
+                        <Link href={'https://behn.dev/blog/' + slug} passHref>
+                            <h1 className="text-xl font-semibold text-gray-700">
+                                {title}
+                            </h1>
+                        </Link>
+                        {/* Tags */}
+                        <div className="flex flex-row my-2">
+                            {tags.map((tag) => {
+                                return (
+                                    <>
+                                        <button className="rounded-full px-3 outline outline-green-300 text-gray-700 drop-shadow-2xl" disabled>
+                                            {tag}
+                                        </button>
+                                    </>
+                                )
+                            })}
+                        </div>
+                        <p className="text-lg text-gray-500">
                             {description}
                         </p>
                     </div>

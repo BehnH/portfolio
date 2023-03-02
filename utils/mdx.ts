@@ -9,6 +9,7 @@ import { z } from 'zod';
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import imageSize from "rehype-img-size";
+import rehypePrism from "@mapbox/rehype-prism";
 
 const rootDir = process.cwd();
 
@@ -69,7 +70,7 @@ export async function getPostBySlug(slug: string) {
     const layout = PostLayout.parse(data);
     const mdxSource = await serialize(content, {
         mdxOptions: {
-            development: process.env.NODE_ENV !== 'production',
+            development: process.env.NODE_ENV !== 'production' ? true : false,
             rehypePlugins: [
                 rehypeSlug,
                 [
@@ -79,13 +80,14 @@ export async function getPostBySlug(slug: string) {
                     },
                 ],
                 [imageSize, { dir: "public" }] as any,
+                rehypePrism
             ],
         },
     });
 
     return {
         mdxSource,
-        layout: {
+        frontMatter: {
             readingTime: readingTime(postContent),
             slug: slug || null,
             ...layout

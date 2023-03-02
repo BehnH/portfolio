@@ -4,6 +4,7 @@ import Head from 'next/head'
 
 import 'tailwindcss/tailwind.css'
 import '../styles/globals.css'
+import 'remixicon/fonts/remixicon.css'
 
 class MyApp extends App {
     static async getInitialProps(appContext: AppContext) {
