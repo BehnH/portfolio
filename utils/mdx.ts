@@ -28,10 +28,12 @@ export type Post = z.infer<typeof PostLayout> & {
 // Sort posts by date in descending order
 export async function sortPosts(tag?: string): Promise<Post[]> {
     const postsDir = path.join(rootDir, 'blogposts');
-    const files = fs.readdirSync(postsDir);
+    let files = fs.readdirSync(postsDir);
     const postList: Post[] = [];
 
     if (!files) return postList;
+
+    files = files.filter((file) => file.endsWith('.mdx'))
 
     files.forEach((file) => {
         const filePath = path.join(postsDir, file);
