@@ -1,4 +1,4 @@
-import useSWR, { Fetcher } from 'swr'
+import useSWR from 'swr'
 
 type Track = {
     album_artwork: string;
@@ -17,8 +17,8 @@ export function NowPlaying() {
         <>
             {data !== null && data.playing && (
                 <>
-                    <div className="max-w-6xl mx-auto h-48 bg-white">
-                        <h1 className=" text-5xl md:text-9xl font-bold py-20 text-center md:text-left">
+                    <div className="max-w-6xl mx-auto h-48 bg-white mb-6">
+                        <h1 className=" text-5xl md:text-9xl font-bold py-20 text-center md:text-left underline decoration-[#bbf7d0] decoration-wavy decoration-4">
                             Now Playing
                         </h1>
                     </div>
@@ -33,13 +33,12 @@ export function NowPlaying() {
 
 export function MostRecent() {
     const { data, error } = useSWR('https://spotify-workers.waitrosedev.workers.dev/spotify/recent', (apiUrl: string) => fetch(apiUrl).then(res => res.json()));
-    if (!data) return <p>Loading...</p>
     if (error) return <p>Failed to load</p>
 
     return (
         <>
-            <div className="max-w-6xl mx-auto h-48 bg-white">
-                <h1 className=" text-5xl md:text-9xl font-bold py-20 text-center md:text-left">
+            <div className="max-w-6xl mx-auto h-48 bg-white mb-6">
+                <h1 className=" text-5xl md:text-9xl font-bold py-20 text-center md:text-left underline decoration-[#bbf7d0] decoration-wavy decoration-4">
                     Recently Played
                 </h1>
             </div>
@@ -59,8 +58,8 @@ export function TopTracks() {
 
     return (
         <>
-            <div className="max-w-6xl mx-auto h-48 bg-white">
-                <h1 className=" text-5xl md:text-9xl font-bold py-20 text-center md:text-left">
+            <div className="max-w-6xl mx-auto h-48 bg-white mb-6">
+                <h1 className=" text-5xl md:text-9xl font-bold py-20 text-center md:text-left underline decoration-[#bbf7d0] decoration-wavy decoration-4">
                     Top Tracks
                 </h1>
             </div>
@@ -103,6 +102,7 @@ function CurrentTrack(track: Track) {
     return (
         <div className="relative border p-4 rounded-md shadow-xl bg-white z-10 mx-4 border-[#1DB954]">
             <div className="flex pl-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */ }
                 <img className="h-24 w-24" src={track.album_artwork} alt="Current track artwork" />
                 <div className="flex flex-col justify-center ml-4">
                     <a
