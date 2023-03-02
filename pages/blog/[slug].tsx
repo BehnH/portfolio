@@ -38,8 +38,8 @@ const Blogpost = ({ mdxSource, frontMatter }: any) => {
 export default Blogpost;
 
 export async function getStaticPaths() {
-    const posts = await getPostDir();
-    console.log(posts);
+    let posts = await getPostDir();
+    posts = posts.filter((post) => post.endsWith(".mdx")); // Filter out non-mdx files
     return {
         paths: posts.map((post) => ({
             params: {
