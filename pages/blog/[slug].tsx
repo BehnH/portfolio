@@ -26,8 +26,16 @@ const Blogpost = ({ mdxSource, frontMatter }: any) => {
             <ContainerBlock>
                 <div className="max-w-4xl mx-auto pb-5">
                     <h1 className="text-3xl font-semibold underline decoration-[#bbf7d0] decoration-wavy decoration-2">{title}</h1>
+                    <div className="flex flex-row justify-between">
+                        <div className="flex flex-row gap-2 mt-2">
+                            <i className="ri-calendar-2-line ri-md"></i>
+                            <p className="text-gray-500 text-md">
+                                {format(parseISO(date), "MMMM dd, yyyy")}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div className="max-w-2xl mx-auto prose prose-violet">
+                <div className="max-w-2xl mx-auto prose prose-violet pb-10">
                     <MDXRemote {...mdxSource} components={{ ...MDXComponents }} />
                 </div>
             </ContainerBlock>

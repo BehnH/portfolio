@@ -73,30 +73,40 @@ function BlogCard({ title, description, date, tags, slug, readingTime }: BlogCar
     return (
         <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="flex flex-col">
-                <div className="flex flex-row">
-                    <div className="flex flex-col">
-                        <Link href={'https://behn.dev/blog/' + slug} passHref>
-                            <h1 className="text-xl font-semibold text-gray-700">
-                                {title}
-                            </h1>
-                        </Link>
-                        {/* Tags */}
-                        <div className="flex flex-row my-2">
-                            {tags.map((tag) => {
-                                return (
-                                    <>
-                                        <button className="rounded-full px-3 outline outline-green-300 text-gray-700 drop-shadow-2xl" disabled>
-                                            {tag}
-                                        </button>
-                                    </>
-                                )
-                            })}
-                        </div>
-                        <p className="text-lg text-gray-500">
-                            {description}
+                <div className="flex flex-row w-full justify-between">
+                    <div className="flex flex-row gap-2">
+                        <i className="ri-calendar-2-line"></i>
+                        <p className="text-gray-500 text-sm">
+                            {date}
+                        </p>
+                    </div>
+                    <div className="flex flex-row gap-2">
+                        <i className="ri-time-line"></i>
+                        <p className="text-gray-500 text-sm">
+                            {readingTime.text}
                         </p>
                     </div>
                 </div>
+                <Link href={'https://behn.dev/blog/' + slug} passHref>
+                    <h1 className="text-xl font-semibold text-gray-700">
+                        {title}
+                    </h1>
+                </Link>
+                {/* Tags */}
+                <div className="flex flex-row my-2 gap-3">
+                    {tags.map((tag) => {
+                        return (
+                            <>
+                                <button className="rounded-full px-3 outline outline-green-300 text-gray-700 drop-shadow-2xl" disabled>
+                                    {tag}
+                                </button>
+                            </>
+                        )
+                    })}
+                </div>
+                <p className="text-lg text-gray-500">
+                    {description}
+                </p>
             </div>
         </div>
     )
