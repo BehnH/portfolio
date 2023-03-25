@@ -16,7 +16,7 @@ class MyApp extends App {
         const { Component, pageProps } = this.props;
 
         return (
-            <>
+            <div className="selection:bg-green-200 dark:bg-black h-screen">
                 <Head>
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <title>Behn Hayhoe</title>
@@ -41,10 +41,10 @@ class MyApp extends App {
                     <meta name="theme-color" content="#bbf7d0" />
                 </Head>
 
-                <div className='selection:bg-green-200'>
+                <div>
                     <Component {...pageProps} />
                 </div>
-            </>
+            </div>
         )
     }
 }

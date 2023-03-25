@@ -12,10 +12,10 @@ export default function Navbar() {
                 <div className="flex flex-col">
                     <Link href="/" legacyBehavior>
                         <a>
-                            <h1 className="font-semibold text-xl">
+                            <h1 className="font-semibold text-xl dark:text-gray-200">
                                 Behn Hayhoe
                             </h1>
-                            <p className="text-base font-light">
+                            <p className="text-base font-light dark:text-gray-200">
                                 Software Engineer
                             </p>
                         </a>
@@ -26,8 +26,8 @@ export default function Navbar() {
                     <Link href="/about" legacyBehavior>
                         <a
                             className={`text-base  ${router.asPath === "/about"
-                                    ? "text-gray-800 font-bold"
-                                    : "text-gray-600 font-normal "
+                                    ? "text-gray-800 dark:text-gray-200 font-bold"
+                                    : "text-gray-600 dark:text-gray-200 font-normal "
                                 }`}
                         >
                             About{" "}
@@ -37,7 +37,7 @@ export default function Navbar() {
                                     width="16"
                                     height="16"
                                     fill="currentColor"
-                                    className="bi bi-arrow-down inline-block h-3 w-3"
+                                    className="bi bi-arrow-down inline-block h-3 w-3 dark:text-gray-200"
                                     viewBox="0 0 16 16"
                                 >
                                     <path
@@ -51,8 +51,8 @@ export default function Navbar() {
                     <Link href="/experience" legacyBehavior>
                         <a
                             className={`text-base  ${router.asPath === "/experience"
-                                    ? "text-gray-800 font-bold"
-                                    : "text-gray-600 font-normal "
+                                    ? "text-gray-800 dark:text-gray-200 font-bold"
+                                    : "text-gray-600 dark:text-gray-200 font-normal "
                                 }`}
                         >
                             Experience{" "}
@@ -62,7 +62,7 @@ export default function Navbar() {
                                     width="16"
                                     height="16"
                                     fill="currentColor"
-                                    className="bi bi-arrow-down inline-block h-3 w-3"
+                                    className="bi bi-arrow-down inline-block h-3 w-3 dark:text-gray-200"
                                     viewBox="0 0 16 16"
                                 >
                                     <path
@@ -76,8 +76,8 @@ export default function Navbar() {
                     <Link href="/blog" legacyBehavior>
                         <a
                             className={`text-base  ${router.asPath === "/blog"
-                                    ? "text-gray-800 font-bold"
-                                    : "text-gray-600 font-normal "
+                                    ? "text-gray-800 dark:text-gray-200 font-bold"
+                                    : "text-gray-600 dark:text-gray-200 font-normal "
                                 }`}
                         >
                             Blog{" "}
@@ -87,7 +87,7 @@ export default function Navbar() {
                                     width="16"
                                     height="16"
                                     fill="currentColor"
-                                    className="bi bi-arrow-down inline-block h-3 w-3"
+                                    className="bi bi-arrow-down inline-block h-3 w-3 dark:text-gray-200"
                                     viewBox="0 0 16 16"
                                 >
                                     <path
@@ -101,8 +101,8 @@ export default function Navbar() {
                     <Link href="/listening" legacyBehavior>
                         <a
                             className={`text-base  ${router.asPath === "/listening"
-                                    ? "text-gray-800 font-bold"
-                                    : "text-gray-600 font-normal "
+                                    ? "text-gray-800 dark:text-gray-200 font-bold"
+                                    : "text-gray-600 dark:text-gray-200 font-normal "
                                 }`}
                         >
                             Listening
@@ -112,7 +112,7 @@ export default function Navbar() {
                                     width="16"
                                     height="16"
                                     fill="currentColor"
-                                    className="bi bi-arrow-down inline-block h-3 w-3"
+                                    className="bi bi-arrow-down inline-block h-3 w-3 dark:text-gray-200"
                                     viewBox="0 0 16 16"
                                 >
                                     <path
