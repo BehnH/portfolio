@@ -26,7 +26,7 @@
     "rehype-autolink-headings": "^6.1.1",
     "rehype-img-size": "^1.0.1",
     "rehype-slug": "^5.1.0",
-    "remixicon": "^2.5.0",
+    "remixicon": "^3.0.0",
     "swr": "^2.0.0",
     "typescript": "5.0.2",
     "zod": "^3.20.6"
