@@ -20,7 +20,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: prepare variables
-        uses: ./.github/actions/docker-push-vars
+        uses: ./.github/actions/docker-vars
         id: ev
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
