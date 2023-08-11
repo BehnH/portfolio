@@ -9,7 +9,7 @@ import { z } from 'zod';
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import imageSize from "rehype-img-size";
-import rehypePrism from "@mapbox/rehype-prism";
+import rehypeHighlight from 'rehype-highlight';
 
 const rootDir = process.cwd();
 
@@ -82,7 +82,7 @@ export async function getPostBySlug(slug: string) {
                     },
                 ],
                 [imageSize, { dir: "public" }] as any,
-                rehypePrism
+                rehypeHighlight,
             ],
         },
     });
