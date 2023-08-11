@@ -12,7 +12,6 @@ const Blogpost = ({ mdxSource, frontMatter }: any) => {
     return (
         <>
             <Head>
-                <title>Behn&apos;s Blog | {title}</title>
                 <meta name="description" property="og:description" content={description} />
                 <meta property="og:title" content={title} />
                 <meta property="og:type" content="article" />
@@ -23,7 +22,11 @@ const Blogpost = ({ mdxSource, frontMatter }: any) => {
                     content={format(parseISO(date), "yyyy-MM-ddTHH:mm:sszzz")}
                 />
             </Head>
-            <ContainerBlock>
+            <ContainerBlock
+                title={`Behn's Ramblings | ${title}`}
+                description={description}
+            >
+                <link rel="stylesheet" href={"/styles/github-dark.min.css"} />
                 <div className="max-w-4xl mx-auto pb-5">
                     <h1 className="text-3xl font-semibold underline decoration-[#bbf7d0] decoration-wavy decoration-2">{title}</h1>
                     <div className="flex flex-row justify-between">

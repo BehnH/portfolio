@@ -39,7 +39,10 @@ const jobHistory = [
 export default function Page() {
     return (
         <>
-            <ContainerBlock>
+            <ContainerBlock
+                title={"Behn Hayhoe | Experience"}
+                description={"Learn a little bit more about my experience in the Software Engineering industry."}
+            >
                 <section className="bg-white">
                     <div className="max-w-6xl mx-auto h-48 bg-white">
                         <h1 className="text-5xl md:text-9xl font-bold py-20 text-center md:text-left underline decoration-[#bbf7d0] decoration-wavy decoration-4">
