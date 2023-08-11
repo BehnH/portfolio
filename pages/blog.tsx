@@ -29,8 +29,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
                         </h1>
                     </div>
                     <div>
-                        <div className="grid grid-cols-1 max-w-xl mx-auto pt-20">
-                            {/* Experience card */}
+                        <div className="grid grid-cols-1 max-w-xl mx-auto pt-20 gap-4">
                             {posts.length === 0 && (
                                 <>
                                     <h1 className="text-2xl font-semibold text-gray-700">
