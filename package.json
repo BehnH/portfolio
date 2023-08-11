@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.8.0",
-    "@types/node": "18.15.10",
+    "@types/node": "18.17.5",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
     "date-fns": "^2.29.3",
