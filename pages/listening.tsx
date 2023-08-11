@@ -4,7 +4,10 @@ import { MostRecent, NowPlaying, TopTracks } from "../components/Spotify";
 export default function Page() {
     return (
         <>
-            <ContainerBlock>
+            <ContainerBlock
+                title={"Behn Hayhoe | Listening History"}
+                description={"Check out what I've been listening to on Spotify."}
+            >
                 <NowPlaying />
                 <MostRecent />
                 <TopTracks />

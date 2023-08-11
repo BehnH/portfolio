@@ -21,7 +21,10 @@ export default function Blog({ posts }: { posts: Post[] }) {
 
     return (
         <>
-            <ContainerBlock>
+            <ContainerBlock
+                title={"Behn Hayhoe | Ramblings"}
+                description={"A collection of my thoughts, ideas, and ramblings."}
+            >
                 <section className="bg-white">
                     <div className="max-w-6xl mx-auto h-48 bg-white">
                         <h1 className=" text-5xl md:text-9xl font-bold py-20 text-center md:text-left underline decoration-[#bbf7d0] decoration-wavy decoration-4">

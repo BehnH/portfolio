@@ -4,7 +4,10 @@ import { ContainerBlock } from "../components/Base";
 export default function Page() {
     return (
         <>
-            <ContainerBlock>
+            <ContainerBlock
+                title={"Behn Hayhoe | Software Engineer"}
+                description={"Hey 👋, I'm Behn - a passionate Software Engineer."}
+            >
                 <div className="flex flex-row justify-center items-start overflow-hidden">
                     <div className="w-full md:w-1/2 mx-auto text-center md:text-left lg:p-20 font-bold text-gray-800">
                         <h1 className="text-4xl md:text-8xl my-2">
