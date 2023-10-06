@@ -5,5 +5,20 @@
     "feed_url": "https://www.behn.dev/feed.json",
     "description": "A blog about programming, coffe, life, and other things.",
     "icon": "https://www.behn.dev/wordmark.png",
-    "items": []
+    "items": [
+        {
+            "id": "https://www.behn.dev/blog/running-tailscale-go-on-headscale",
+            "url": "https://www.behn.dev/blog/running-tailscale-go-on-headscale",
+            "title": "Running tailscale golink on kubernetes (Headscale edition)",
+            "summary": "How to deploy tailscale golink to work with a Headscale server",
+            "date_modified": "2023-10-06T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.behn.dev/blog/using-chezmoi-with-1password",
+            "url": "https://www.behn.dev/blog/using-chezmoi-with-1password",
+            "title": "Using 1Password to store secret dotfiles with Chezmoi",
+            "summary": "How to use 1Password to store the contents of a secret file in 1Password.",
+            "date_modified": "2023-03-09T00:00:00.000Z"
+        }
+    ]
 }

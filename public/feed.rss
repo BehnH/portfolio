@@ -4,7 +4,7 @@
         <title>Behn's Blog | RSS Feed</title>
         <link>https://www.behn.dev</link>
         <description>A blog about programming, coffe, life, and other things.</description>
-        <lastBuildDate>Sun, 26 Feb 2023 09:49:34 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 06 Oct 2023 15:01:12 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Next.js using Feed for Node.js</generator>
         <image>
@@ -13,5 +13,19 @@
             <link>https://www.behn.dev</link>
         </image>
         <copyright>All rights reserved.</copyright>
+        <item>
+            <title><![CDATA[Running tailscale golink on kubernetes (Headscale edition)]]></title>
+            <link>https://www.behn.dev/blog/running-tailscale-go-on-headscale</link>
+            <guid>https://www.behn.dev/blog/running-tailscale-go-on-headscale</guid>
+            <pubDate>Fri, 06 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[How to deploy tailscale golink to work with a Headscale server]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Using 1Password to store secret dotfiles with Chezmoi]]></title>
+            <link>https://www.behn.dev/blog/using-chezmoi-with-1password</link>
+            <guid>https://www.behn.dev/blog/using-chezmoi-with-1password</guid>
+            <pubDate>Thu, 09 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[How to use 1Password to store the contents of a secret file in 1Password.]]></description>
+        </item>
     </channel>
 </rss>

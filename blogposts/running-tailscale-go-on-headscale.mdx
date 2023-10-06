@@ -1,0 +1,112 @@
+---
+title: 'Running tailscale golink on kubernetes (Headscale edition)'
+date: '2023-10-06'
+description: 'How to deploy tailscale golink to work with a Headscale server'
+tags: ['guide', 'security', 'k8s', 'self-hosted']
+---
+
+As much as I love tailscale, rolling my own internal VPN with headscale has proven to be great fun and and good challenge. tailscale recently (read: a while ago, I'm just late to the party) introduced **golink** - an open source private URL shortener service for your tailnet. You can read more about this [on the tailscale blog](https://tailscale.com/blog/golink/)
+
+---
+
+For some context, I run my infrastructure on a self-managed Hetzner Cloud setup using their ARM boxes, with istio & authentik providing my ingress proxy and security needs. FluxCD is my GitOps provider of choice.
+I use headscale for my internal routing to my cluster, and also to tools running at home and in other locations. Keeping track of different links is challenging, plus I don't really use 1 browser between my devices (Arc on MacOS, Safari on iOS, etc.) so syncing bookmarks isn't so easy to _just do_.
+So, using tailscale's GoLink project, and my Headscale setup, I now run my own private `go/` service, and here's how I did it.
+
+## Part 1 - Infrastructure/backing
+
+I'll be running golink on my k8s cluster as it's where headscale lives, and that's good enough for me. I'll be running this in my networking namespace **however** you can totally create a new namespace for this. Do this using the following:
+
+```bash
+kubectl create namespace networking
+```
+
+You don't need to configure istio's automatic injection for this namespace because of how headscale/tailscale works.
+
+## Part 2 - The setup
+
+Firstly, you'll need to create a **PersistentVolumeClaim** - an example of this is below:
+
+```yaml
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: golink-pvc
+  namespace: networking
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+```
+
+From there, you'll need to create a **Deployment** - replacing `YOUR_AUTH_KEY` with your Tailnet key, and `YOUR_HEADSCALE_URL` with your headscale controlplane URL:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golink
+  namespace: headscale
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: golink
+      app.kubernetes.io/instance: main
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: golink
+        app.kubernetes.io/instance: main
+        sidecar.istio.io/inject: "false"
+    spec:
+      securityContext:
+          fsGroup: 1000
+      containers:
+        - image: ghcr.io/tailscale/golink:main
+          name: golink
+          command:
+            - "/golink"
+          args:
+            - "-sqlitedb"
+            - "/home/nonroot/golink.db"
+            - "-verbose"
+            - "-control-url"
+            - "YOUR_HEADSCALE_URL"
+          env:
+            - name: TS_AUTHKEY
+              value: YOUR_AUTH_KEY
+          volumeMounts:
+            - name: data
+              mountPath: /home/nonroot
+          resources: {}
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: golink-pvc
+```
+
+_It's important to mention that you can also use a secret for your environment variable (And I'd probably advice it) - this example just sets the key directly in the Deployment for ease_
+
+Lastly, we'll need to apply these to our Cluster - do this by running (Assuming you named your files `golink-pvc.yaml` & `golink-deployment.yaml`):
+
+```
+kubectl apply -f golink-pvc.yaml -f golink-deployment.yaml
+```
+
+_If you're using Flux, commit the files to Git & Flux's source controller will do the rest_
+
+And... that's kinda it! Wait for the service to come online in your cluster and you can get started creating internal short-links!
+
+---
+
+Products/projects mentioned:
+
+- [tailscale](https://tailscale.com)
+- [headscale](https://github.com/juanfont/headscale)
+- [istio](https://istio.io/)
+- [authentik](https://goauthentik.io)
+- [Hetzner Cloud _(Affiliate Link!)_](https://hetzner.cloud/?ref=BByPFGcuFdtb)
