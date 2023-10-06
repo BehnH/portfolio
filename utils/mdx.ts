@@ -10,6 +10,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import imageSize from "rehype-img-size";
 import rehypeHighlight from 'rehype-highlight';
+import rehypePrettyCode from 'rehype-pretty-code';
 
 const rootDir = process.cwd();
 
@@ -82,7 +83,16 @@ export async function getPostBySlug(slug: string) {
                     },
                 ],
                 [imageSize, { dir: "public" }] as any,
-                rehypeHighlight,
+                [
+                    rehypePrettyCode,
+                    {
+                        theme: 'one-dark-pro',
+                        defaultLang: {
+                            block: 'plaintext',
+                            inline: 'plaintext'
+                        }
+                    }
+                ],
             ],
         },
     });
