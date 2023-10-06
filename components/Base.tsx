@@ -16,7 +16,7 @@ export function ContainerBlock({
         const meta = {
             title: title !== undefined ? title : "Behn Hayhoe - Developer, Systems Engineer, and Solutions Designer",
             description: description !== undefined ? description : "Hey 👋, I'm Behn - a passionate Software Engineer and Technology enthusiast.",
-            image: "/avatar,png",
+            image: "/avatar.png",
             type: "website",
         };
 
