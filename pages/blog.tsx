@@ -44,6 +44,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
                                 return (
                                     <>
                                         <BlogCard
+                                            key={post.slug}
                                             title={post.title}
                                             description={post.description}
                                             date={post.date}
@@ -73,7 +74,7 @@ type BlogCardProps = {
 
 function BlogCard({ title, description, date, tags, slug, readingTime }: BlogCardProps) {
     return (
-        <div className="bg-white rounded-lg shadow-lg p-8">
+        <div className="bg-white rounded-lg shadow-lg p-8 relative">
             <div className="flex flex-col">
                 <div className="flex flex-row w-full justify-between">
                     <div className="flex flex-row gap-2">

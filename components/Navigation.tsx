@@ -7,15 +7,15 @@ export default function Navbar() {
     const router = useRouter();
 
     return (
-        <div className="max-w-6xl mx-auto px-4 py-10 md:py-16">
+        <div className="w-full mx-auto px-10 py-10 md:py-16 z-10">
             <div className="flex md:flex-row justify-between items-center select-none">
                 <div className="flex flex-col">
                     <Link href="/" legacyBehavior>
                         <a>
-                            <h1 className="font-semibold text-xl">
+                            <h1 className="text-xl">
                                 Behn Hayhoe
                             </h1>
-                            <p className="text-base font-light">
+                            <p>
                                 Software Engineer
                             </p>
                         </a>
@@ -26,8 +26,8 @@ export default function Navbar() {
                     <Link href="/about" legacyBehavior>
                         <a
                             className={`text-base  ${router.asPath === "/about"
-                                    ? "text-gray-800 font-bold"
-                                    : "text-gray-600 font-normal "
+                                ? "font-bold"
+                                : ""
                                 }`}
                         >
                             About{" "}
@@ -51,8 +51,8 @@ export default function Navbar() {
                     <Link href="/experience" legacyBehavior>
                         <a
                             className={`text-base  ${router.asPath === "/experience"
-                                    ? "text-gray-800 font-bold"
-                                    : "text-gray-600 font-normal "
+                                ? "font-bold"
+                                : ""
                                 }`}
                         >
                             Experience{" "}
@@ -76,8 +76,8 @@ export default function Navbar() {
                     <Link href="/blog" legacyBehavior>
                         <a
                             className={`text-base  ${router.asPath === "/blog"
-                                    ? "text-gray-800 font-bold"
-                                    : "text-gray-600 font-normal "
+                                ? "font-bold"
+                                : ""
                                 }`}
                         >
                             Blog{" "}
@@ -101,8 +101,8 @@ export default function Navbar() {
                     <Link href="/listening" legacyBehavior>
                         <a
                             className={`text-base  ${router.asPath === "/listening"
-                                    ? "text-gray-800 font-bold"
-                                    : "text-gray-600 font-normal "
+                                ? "font-bold"
+                                : ""
                                 }`}
                         >
                             Listening

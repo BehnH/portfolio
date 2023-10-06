@@ -21,7 +21,7 @@ export function ContainerBlock({
         };
 
         return (
-            <div>
+            <div className="z-100">
                 <Head>
                     {/* Standard Meta information */}
                     <title>{meta.title}</title>
@@ -43,10 +43,9 @@ export function ContainerBlock({
                     <meta name="twitter:image" content={meta.image} />
                     <meta name="twitter:site" content="@BehnH" />
                 </Head>
-                <main className="w-full">
+                <main className="w-full h-screen relative">
                     <Navbar />
                     <div>{children}</div>
-                    <footer />
                 </main>
             </div>
         );

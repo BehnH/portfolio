@@ -53,7 +53,16 @@ export function MostRecent() {
 
 export function TopTracks() {
     const { data, error } = useSWR('https://spotify-workers.waitrosedev.workers.dev/spotify/top', (apiUrl: string) => fetch(apiUrl).then(res => res.json()));
-    if (!data) return <p>Loading...</p>
+    if (!data) return (
+        <>
+            <div className="max-w-6xl mx-auto h-48 bg-white mb-6">
+                <div className="w-12 h-12 rounded-full absolute
+                            border-4 border-solid border-gray-200"></div>
+                <div className="w-12 h-12 rounded-full animate-spin absolute
+                            border-4 border-solid border-green-500 border-t-transparent"></div>
+            </div>
+        </>
+    );
     if (error) return <p>Failed to load</p>
 
     return (
@@ -102,7 +111,7 @@ function CurrentTrack(track: Track) {
     return (
         <div className="relative border p-4 rounded-md shadow-xl bg-white z-10 mx-4 border-[#1DB954]">
             <div className="flex pl-3">
-                {/* eslint-disable-next-line @next/next/no-img-element */ }
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img className="h-24 w-24" src={track.album_artwork} alt="Current track artwork" />
                 <div className="flex flex-col justify-center ml-4">
                     <a
