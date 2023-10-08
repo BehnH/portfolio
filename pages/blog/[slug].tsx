@@ -1,7 +1,6 @@
 import { format, parseISO } from "date-fns";
 import { MDXRemote } from "next-mdx-remote";
 import Head from "next/head";
-import Link from "next/link";
 import { ContainerBlock } from "../../components/Base";
 import MDXComponents from "../../components/MdxComps";
 import { getPostBySlug, getPostDir } from "../../utils/mdx";
@@ -12,8 +11,8 @@ const Blogpost = ({ mdxSource, frontMatter }: any) => {
     return (
         <>
             <Head>
-                <meta name="description" property="og:description" content={description} />
-                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
+                <meta property="og:title" content={`Behn's Ramblings | ${title}`} />
                 <meta property="og:type" content="article" />
                 <meta property="og:url" content={`https://behn.dev/blog/${slug}`} />
                 <meta property="og:locale" content="en_GB" />

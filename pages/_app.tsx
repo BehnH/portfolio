@@ -35,8 +35,6 @@ class MyApp extends App {
                     <meta name="HandheldFriendly" content="True" />
                     <meta lang="English" />
 
-                    <meta property="og:title" content="Behn" />
-                    <meta property="og:type" content="website" />
                     <meta property="og:url" content="https://behn.dev" />
                     <meta name="theme-color" content="#bbf7d0" />
                 </Head>
