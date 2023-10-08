@@ -6,7 +6,7 @@ import MDXComponents from "../../components/MdxComps";
 import { getPostBySlug, getPostDir } from "../../utils/mdx";
 
 const Blogpost = ({ mdxSource, frontMatter }: any) => {
-    const { title, date, readingTime, description, slug } = frontMatter;
+    const { title, date, readingTime, description, slug, bannerfile } = frontMatter;
 
     return (
         <>
@@ -20,6 +20,10 @@ const Blogpost = ({ mdxSource, frontMatter }: any) => {
                     property="og:published_date"
                     content={format(parseISO(date), "yyyy-MM-ddTHH:mm:sszzz")}
                 />
+                <meta property="og:author" content="Behn Hayhoe" />
+                {bannerfile && (
+                    <meta property="og:image" content={`https://behn.dev/blog-images/${bannerfile}`} />
+                )}
             </Head>
             <ContainerBlock
                 title={`Behn's Ramblings | ${title}`}
