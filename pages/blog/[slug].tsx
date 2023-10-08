@@ -11,23 +11,15 @@ const Blogpost = ({ mdxSource, frontMatter }: any) => {
     return (
         <>
             <Head>
-                <meta property="og:description" content={description} />
-                <meta property="og:title" content={`Behn's Ramblings | ${title}`} />
-                <meta property="og:type" content="article" />
                 <meta property="og:url" content={`https://behn.dev/blog/${slug}`} />
-                <meta property="og:locale" content="en_GB" />
-                <meta
-                    property="og:published_date"
-                    content={format(parseISO(date), "yyyy-MM-ddTHH:mm:sszzz")}
-                />
                 <meta property="og:author" content="Behn Hayhoe" />
-                {bannerfile && (
-                    <meta property="og:image" content={`https://behn.dev/blog-images/${bannerfile}`} />
-                )}
             </Head>
             <ContainerBlock
                 title={`Behn's Ramblings | ${title}`}
                 description={description}
+                image={`https://behn.dev/blog-images/${bannerfile}`}
+                type="article"
+                publishedDate={format(parseISO(date), "yyyy-MM-ddTHH:mm:sszzz")}
             >
                 <link rel="stylesheet" href={"/styles/github-dark.min.css"} />
                 <div className="max-w-4xl mx-auto pb-5">

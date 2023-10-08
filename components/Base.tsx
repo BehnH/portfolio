@@ -5,10 +5,17 @@ import Navbar from "./Navigation";
 export function ContainerBlock({
     title,
     description,
-    children }: {
+    children,
+    type,
+    image,
+    publishedDate,
+}: {
     title: string | undefined,
     description: string | undefined,
-    children: React.ReactNode
+    children: React.ReactNode,
+    type?: string,
+    image?: string,
+    publishedDate?: string,
 }) {
         // Fetch the router
         const router = useRouter();
@@ -16,8 +23,8 @@ export function ContainerBlock({
         const meta = {
             title: title !== undefined ? title : "Behn Hayhoe - Developer, Systems Engineer, and Solutions Designer",
             description: description !== undefined ? description : "Hey 👋, I'm Behn - a passionate Software Engineer and Technology enthusiast.",
-            image: "/avatar.png",
-            type: "website",
+            image: image !== undefined ? image : "https://behn.dev/wordmark.png",
+            type: type !== undefined ? type : "website",
         };
 
         return (
@@ -35,6 +42,7 @@ export function ContainerBlock({
                     <meta property="og:description" content={meta.description} />
                     <meta property="og:image" content={meta.image} />
                     <meta property="og:type" content={meta.type} />
+                    <meta property="og:published_time" content={publishedDate} />
 
                     {/* Twitter Meta information */}
                     <meta name="twitter:card" content="summary_large_image" />
