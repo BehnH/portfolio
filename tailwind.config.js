@@ -9,6 +9,9 @@ module.exports = {
         extend: {
             transitionDelay: {
                 0: '0ms',
+            },
+            fontFamily: {
+                'roboto-mono': ['Roboto Mono', 'monospace'],
             }
         },
     },
