@@ -1,51 +1,30 @@
-import Image from "next/image";
-import { ContainerBlock } from "../components/Base";
+import Link from "next/link";
 
 export default function Page() {
-    return (
-        <>
-            <ContainerBlock
-                title={"Behn Hayhoe | Software Engineer"}
-                description={"Hey 👋, I'm Behn - a passionate Software Engineer."}
-            >
-                <div className="flex flex-row justify-center items-start overflow-hidden">
-                    <div className="w-full md:w-1/2 mx-auto text-center md:text-left lg:p-20 font-semibold text-gray-800">
-                        <h1 className="text-4xl md:text-8xl my-2">
-                            Software Engineer.
-                        </h1>
-                        <h1 className="text-4xl md:text-8xl my-2">
-                            Breaker of things.
-                        </h1>
-                        <h1 className="text-4xl md:text-8xl my-2">
-                            Consumer of coffee.
-                        </h1>
-                    </div>
-                    {/* Image container */}
-                    <div className="hidden lg:block relative w-full md:w-1/2 -mr-40 mt-20">
-                        <div className="w-3/4 ">
-                            <Image src="/wordmark.png" alt="avatar" className="shadow" width={475.5} height={475.5} />
-                            <div className="flex flex-row justify-between mt-4">
-                                <div className="flex flex-row space-x-4">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        fill="currentColor"
-                                        className="bi bi-arrow-90deg-up"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z"
-                                        />
-                                    </svg>
-                                    <p className="font-roboto-mono">Hey, I recognise that name!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ContainerBlock>
-        </>
-    )
+  return (
+    <>
+      <div className={"h-screen flex flex-col items-center justify-center"}>
+        <div className="md:w-1/2 mx-auto text-center font-semibold text-gray-800">
+          <h1 className="text-6xl font-bold my-2">Hey 👋, I&apos;m <span
+            className="bg-gradient-to-r from-[#405bff] to-[#3dd6f5] bg-clip-text text-transparent">Behn.</span></h1>
+          <h2 className="text-4xl font-bold my-2">I <span
+            className="bg-gradient-to-r from-[#D34DEE] to-[#2AC9F9] bg-clip-text text-transparent">make things</span>,
+            then <span className="bg-gradient-to-r from-[#FF57A2] to-[#FA2A69] bg-clip-text text-transparent">break things</span>.
+            And I <span className="bg-gradient-to-r from-[#4CD455] to-[#78F74A] bg-clip-text text-transparent">drink a lot of coffee</span> while
+            doing so.</h2>
+        </div>
+        <div className={"flex flex-row gap-5 justify-between font-semibold text-lg"}>
+          <Link href={"/about"} passHref={true}>
+            <p className={"hover:text-pink-700"}>About me</p>
+          </Link>
+          <Link href={"/blog"} passHref={true}>
+            <p className={"hover:text-pink-700"}>Blog</p>
+          </Link>
+          <Link href={"/listening"} passHref={true}>
+            <p className={"hover:text-pink-700"}>Listening History</p>
+          </Link>
+        </div>
+      </div>
+    </>
+  )
 }
