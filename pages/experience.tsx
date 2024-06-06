@@ -3,11 +3,33 @@ import { ContainerBlock } from "../components/Base";
 const jobHistory = [
     {
         company: "LaunchDarkly",
-        role: "Support Engineer",
-        date: "January '22 - Present",
+        role: "Platform Engineer",
+        date: "May '24 - Present",
         companyUrl: "https://launchdarkly.com/",
         description: [
-            "I'm currently working as a Support Engineer for LaunchDarkly, a feature management platform that allows you to manage feature flags across your entire stack.",
+            "I'm currently working as a Platform Engineer for LaunchDarkly, a feature management & experimentation platform that allows you to manage, measure and control your software across your entire stack.",
+            "I work closely with fellow engineering teams on deploying, maintaining, and scaling our infrastructure, and help drive improvement across our product and documentation.",
+            "I spend most of my day head down in Terraform, AWS and CI/CD pipelines, and have driven significant improvements in our infrastructure and deployment processes."
+        ]
+    },
+    {
+        company: "LaunchDarkly",
+        role: "Senior Support Engineer",
+        date: "April '24 - May '24",
+        companyUrl: "https://launchdarkly.com/",
+        description: [
+            "From April '24 to May '24, I was a Senior Support Engineer for LaunchDarkly. Day-to-day, my responsibilities focused on driving improvements in our support processes and documentation, and delivering training to our team.",
+            "I worked closely with our engineering teams on a variety of deeply complex customer issues, and help drive improvement across our product and documentation.",
+            "My work tends to specialise on complex issues in the Identity and Access Management space - working on integrations with SAML and OAuth2. I have made significant contributions to the resources available to our customers and internal teams in the space.",
+        ]
+    },
+    {
+        company: "LaunchDarkly",
+        role: "Support Engineer",
+        date: "January '22 - April '24",
+        companyUrl: "https://launchdarkly.com/",
+        description: [
+            "From January '22 to April '24 I worked as a Support Engineer for LaunchDarkly, a feature management  & experimentation platform that allows you to manage feature flags across your entire stack.",
             "I'm responsible for helping customers with their implementation and maintenance of our SDKs, and their use of our Web App & APIs.",
             "I work with a variety of languages and frameworks, including React, Node, Python, Ruby, Java, GoLang, and more.",
         ]
