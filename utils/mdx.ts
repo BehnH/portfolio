@@ -83,16 +83,7 @@ export async function getPostBySlug(slug: string) {
                     },
                 ],
                 [imageSize, { dir: "public" }] as any,
-                [
-                    rehypePrettyCode,
-                    {
-                        theme: 'one-dark-pro',
-                        defaultLang: {
-                            block: 'plaintext',
-                            inline: 'plaintext'
-                        }
-                    }
-                ],
+                rehypePrettyCode,
             ],
         },
     });
