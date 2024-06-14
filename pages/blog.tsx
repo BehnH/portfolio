@@ -32,7 +32,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
                         </h1>
                     </div>
                     <div>
-                        <div className="grid grid-cols-1 max-w-xl mx-auto pt-20 gap-4">
+                        <div className="grid grid-cols-2 w-1/2 mx-auto pt-20 px-5 gap-4">
                             {posts.length === 0 && (
                                 <>
                                     <h1 className="text-2xl font-semibold text-gray-700">
@@ -74,7 +74,7 @@ type BlogCardProps = {
 
 function BlogCard({ title, description, date, tags, slug, readingTime }: BlogCardProps) {
     return (
-        <div className="bg-white rounded-lg shadow-lg p-8 relative">
+        <div className="bg-white rounded-lg shadow-lg p-8 relative border-dashed border-gray-200 border-2">
             <div className="flex flex-col">
                 <div className="flex flex-row w-full justify-between">
                     <div className="flex flex-row gap-2">
@@ -90,7 +90,7 @@ function BlogCard({ title, description, date, tags, slug, readingTime }: BlogCar
                         </p>
                     </div>
                 </div>
-                <Link href={'https://behn.dev/blog/' + slug} passHref>
+                <Link href={'blog/' + slug} passHref>
                     <h1 className="text-xl font-semibold text-gray-700">
                         {title}
                     </h1>
