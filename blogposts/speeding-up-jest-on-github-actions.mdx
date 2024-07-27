@@ -1,0 +1,89 @@
+---
+title: 'Speeding up Jest on GitHub Actions'
+date: '2024-07-27'
+description: 'How you can speed up your Jest tests on GitHub Actions using sharding and a matrix strategy.'
+tags: ['guide', 'github-actions', 'ci']
+bannerfile: social-jest-gha.png
+---
+
+I've been working on a project at work recently which is seeing us migrate from CircleCI to GitHub Actions. We use jest to test our frontend code, and to match the speed of our CircleCI setup, we needed to parallelize our tests.
+For this, we're using a combination of GitHub's Larger Runners (Specifically an 8-core runner, using Ubuntu 20.04) and Jest's built-in sharding capabilities. In this post, I'll show you how you can do the same, but using GitHub's standard runners.
+
+> **Note:** You'll see that I use `${{ github.event.pull_request.head.sha || github.sha }}{:yaml}` here - this is because the `github.sha` works in a way you probably don't expect.
+> The ``github.sha`` is the sha of the most recent merge commit to the branch, not the HEAD of the PR branch. This means that if you're running on a PR, you'll need to use the PR's head SHA to get the correct results.
+
+## The setup
+
+Firstly, you'll need to configure your GitHub Actions workflow to use a matrix strategy. This will allow you to run multiple jobs in parallel, and will be the basis for the sharding.
+
+```yaml
+name: Jest Tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+# Cancel the workflow if a new push is made before the current one finishes, but only on branches other than main
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest # This can be changed to a larger runner
+    strategy:
+      matrix:
+        shard: [1, 2, 3, 4] # This can be increased or decreased based on your needs
+    env:
+      # Increase the memory limit for node to 16GB (Increase this to match your runner size)
+      NODE_OPTIONS: --max_old_space_size=16384
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Get CPU count
+        run: echo "CPUS=$(nproc 2>/dev/null || echo 2)" >> $GITHUB_ENV
+      - name: Setup node & yarn
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/Iron' # Latest LTS (v20) at time of writing
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
+      - name: Run Jest
+        run: yarn test --ci --maxWorkers=$CPUS --shard=${{ matrix.shard }}/${{ strategy.job-total }}
+      - name: Move test results
+        run: |
+          mkdir -p /tmp/test-results
+          mv junit.xml /tmp/test-results/junit-${{ matrix.shard }}.xml
+      - name: Upload test results # This is optional, but useful for tracking test results in a later step
+        uses: actions/upload-artifact@v4
+        with: # This will upload the test results to the artifacts for use in the reporting step
+          name: test-results-${{ github.event.pull_request.head.sha || github.sha }}-${{ matrix.shard }}
+          path: /tmp/test-results
+```
+
+After we run the tests, we'll want to report their status. For this example, I'm using [dorny/test-reporter](https://github.com/dorny/test-reporter/tree/main) to report the test results back to GitHub Actions.
+It's worth going and reading the docs for this action, as it has a tonne of options for different test reporters, reporting modes, etc.
+
+```yaml
+...
+  comment:
+    runs-on: ubuntu-latest
+    needs: test
+    if: success() || failure() # Only run this job if the test job has passed or failed - not if it was cancelled
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Download test results
+        uses: actions/download-artifact@v4
+        with:
+          # This will download all the test results from the previous job
+          pattern: test-results-${{ github.event.pull_request.head.sha || github.sha }}-*
+      - name: Publish Test Results
+        uses: dorny/test-reporter@v1
+        with:
+          name: Jest Tests
+          path: /tmp/test-results/*.xml
+          reporter: jest-junit
+```

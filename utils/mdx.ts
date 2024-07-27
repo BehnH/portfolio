@@ -10,6 +10,12 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import imageSize from "rehype-img-size";
 import rehypePrettyCode from 'rehype-pretty-code';
+import {toc} from "@jsdevtools/rehype-toc";
+import rehypeParse from "rehype-parse";
+import {unified} from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype/lib";
+import rehypeStringify from "rehype-stringify";
 
 const rootDir = process.cwd();
 
@@ -75,15 +81,12 @@ export async function getPostBySlug(slug: string) {
         mdxOptions: {
             development: process.env.NODE_ENV !== 'production' ? true : false,
             rehypePlugins: [
-                rehypeSlug,
-                [
-                    rehypeAutolinkHeadings,
-                    {
-                        behavior: "append",
-                    },
-                ],
+                rehypeParse,
                 [imageSize, { dir: "public" }] as any,
-                rehypePrettyCode,
+                [rehypePrettyCode, {
+                    theme: "one-light"
+                }],
+                rehypeStringify,
             ],
         },
     });

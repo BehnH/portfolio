@@ -7,6 +7,13 @@
     "icon": "https://www.behn.dev/wordmark.png",
     "items": [
         {
+            "id": "https://www.behn.dev/blog/speeding-up-jest-on-github-actions",
+            "url": "https://www.behn.dev/blog/speeding-up-jest-on-github-actions",
+            "title": "Speeding up Jest on GitHub Actions",
+            "summary": "How you can speed up your Jest tests on GitHub Actions using sharding and a matrix strategy.",
+            "date_modified": "2024-07-27T00:00:00.000Z"
+        },
+        {
             "id": "https://www.behn.dev/blog/running-tailscale-go-on-headscale",
             "url": "https://www.behn.dev/blog/running-tailscale-go-on-headscale",
             "title": "Running tailscale golink on kubernetes (Headscale edition)",

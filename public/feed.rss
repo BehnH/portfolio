@@ -4,7 +4,7 @@
         <title>Behn's Blog | RSS Feed</title>
         <link>https://www.behn.dev</link>
         <description>A blog about programming, coffe, life, and other things.</description>
-        <lastBuildDate>Fri, 06 Oct 2023 15:01:12 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Jul 2024 08:23:58 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Next.js using Feed for Node.js</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://www.behn.dev</link>
         </image>
         <copyright>All rights reserved.</copyright>
+        <item>
+            <title><![CDATA[Speeding up Jest on GitHub Actions]]></title>
+            <link>https://www.behn.dev/blog/speeding-up-jest-on-github-actions</link>
+            <guid>https://www.behn.dev/blog/speeding-up-jest-on-github-actions</guid>
+            <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[How you can speed up your Jest tests on GitHub Actions using sharding and a matrix strategy.]]></description>
+        </item>
         <item>
             <title><![CDATA[Running tailscale golink on kubernetes (Headscale edition)]]></title>
             <link>https://www.behn.dev/blog/running-tailscale-go-on-headscale</link>

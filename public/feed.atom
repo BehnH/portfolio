@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.behn.dev</id>
     <title>Behn's Blog | RSS Feed</title>
-    <updated>2023-10-06T15:01:12.435Z</updated>
+    <updated>2024-07-27T08:23:58.699Z</updated>
     <generator>Next.js using Feed for Node.js</generator>
     <link rel="alternate" href="https://www.behn.dev"/>
     <link rel="self" href="https://www.behn.dev/feed.atom"/>
@@ -10,6 +10,13 @@
     <logo>https://www.behn.dev/wordmark.png</logo>
     <icon>https://www.behn.dev/favicon/favicon.ico</icon>
     <rights>All rights reserved.</rights>
+    <entry>
+        <title type="html"><![CDATA[Speeding up Jest on GitHub Actions]]></title>
+        <id>https://www.behn.dev/blog/speeding-up-jest-on-github-actions</id>
+        <link href="https://www.behn.dev/blog/speeding-up-jest-on-github-actions"/>
+        <updated>2024-07-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How you can speed up your Jest tests on GitHub Actions using sharding and a matrix strategy.]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Running tailscale golink on kubernetes (Headscale edition)]]></title>
         <id>https://www.behn.dev/blog/running-tailscale-go-on-headscale</id>
