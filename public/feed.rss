@@ -4,11 +4,11 @@
         <title>Behn's Ramblings | RSS Feed</title>
         <link>https://www.behn.dev</link>
         <description>A blog mostly about tech, but occasionally about what I'm getting up to offline.</description>
-        <lastBuildDate>Wed, 31 Jul 2024 16:51:23 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 31 Jul 2024 17:24:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Next.js using Feed for Node.js</generator>
         <image>
-            <title>Behn's Blog | RSS Feed</title>
+            <title>Behn's Ramblings | RSS Feed</title>
             <url>https://www.behn.dev/wordmark.png</url>
             <link>https://www.behn.dev</link>
         </image>

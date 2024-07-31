@@ -26,13 +26,10 @@ export default function Blog({ posts }: { posts: Post[] }) {
                 description={"A collection of my thoughts, ideas, and ramblings."}
             >
                 <section className="bg-white">
-                    <div className="max-w-6xl mx-auto h-48 bg-white">
-                        <h1 className=" text-5xl md:text-9xl font-bold py-20 text-center md:text-left underline decoration-[#bbf7d0] decoration-wavy decoration-4">
+                        <h1 className=" text-5xl md:text-9xl font-bold md:py-20 text-center md:text-left underline decoration-[#bbf7d0] decoration-wavy decoration-4">
                             Ramblings
                         </h1>
-                    </div>
-                    <div>
-                        <div className="grid grid-cols-2 w-1/2 mx-auto pt-20 px-5 gap-4">
+                        <div className="grid md:grid-cols-2 my-6 w-full px-2 md:mx-auto md:pt-20 md:px-5 gap-4">
                             {posts.length === 0 && (
                                 <>
                                     <h1 className="text-2xl font-semibold text-gray-700">
@@ -56,7 +53,6 @@ export default function Blog({ posts }: { posts: Post[] }) {
                                 )
                             })}
                         </div>
-                    </div>
                 </section>
             </ContainerBlock>
         </>
@@ -74,7 +70,7 @@ type BlogCardProps = {
 
 function BlogCard({ title, description, date, tags, slug, readingTime }: BlogCardProps) {
     return (
-        <div className="bg-white rounded-lg shadow-lg p-8 relative border-dashed border-gray-200 border-2">
+        <div className="bg-white rounded-lg shadow-lg p-2 md:p-8 relative border-dashed border-gray-200 border-2">
             <div className="flex flex-col">
                 <div className="flex flex-row w-full justify-between">
                     <div className="flex flex-row gap-2">

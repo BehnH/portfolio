@@ -24,21 +24,21 @@ const Blogpost = ({ mdxSource, frontMatter }: any) => {
             >
                 <link rel="stylesheet" href={"/styles/github-dark.min.css"} />
                 <div className="max-w-4xl mx-auto pb-5 text-center">
-                    <div className="flex flex-row justify-between">
+                    <div className="flex flex-col md:flex-row gap-2 justify-between">
                         <Link
-                          className={"flex flex-row gap-2 px-10 text-gray-500"}
+                          className={"flex flex-row gap-2 md:px-10 text-gray-500"}
                           href={"/blog"}
                           passHref={true}>
                             <i className="ri-arrow-left-line ri-md"></i>
                             <p>Go back to the list</p>
                         </Link>
-                        <div className="flex flex-row gap-2 mb-2">
+                        <div className="flex flex-row gap-2 md:mb-2">
                             <i className="ri-calendar-2-line ri-md"></i>
                             <p className="text-gray-500 text-md">
                                 {format(parseISO(date), "MMMM dd, yyyy")}
                             </p>
                         </div>
-                        <div className={"flex flew-row gap-2 mb-2"}>
+                        <div className={"flex flew-row gap-2 md:mb-2"}>
                             <i className="ri-time-line"></i>
                             <p className="text-gray-500 text-md">
                                 {readingTime.text}
@@ -48,7 +48,7 @@ const Blogpost = ({ mdxSource, frontMatter }: any) => {
                     <h1
                       className="text-3xl font-semibold underline decoration-[#bbf7d0] decoration-wavy decoration-2">{title}</h1>
                 </div>
-                <div className="max-w-5xl mx-auto prose prose-violet pb-10">
+                <div className="max-w-5xl mx-auto prose prose-violet px-2 pb-10">
                     <MDXRemote {...mdxSource} components={{...MDXComponents}}/>
                 </div>
             </ContainerBlock>

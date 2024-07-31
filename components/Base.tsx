@@ -51,7 +51,7 @@ export function ContainerBlock({
                     <meta name="twitter:image" content={meta.image} />
                     <meta name="twitter:site" content="@BehnH" />
                 </Head>
-                <main className="w-full h-screen relative">
+                <main className="w-full relative overflow-visible">
                     <Navbar />
                     <div>{children}</div>
                 </main>
