@@ -1,0 +1,79 @@
+---
+title: 'How to skip required checks in GitHub Actions'
+date: '2024-07-31'
+description: 'How you can add a job to your GitHub Actions workflow that will allow you to skip required checks.'
+tags: ['guide', 'github-actions', 'ci']
+bannerfile: social-skipping-checks-gha.png
+---
+
+As mentioned in [Speeding up Jest on GitHub Actions](/blog/speeding-up-jest-on-github-actions), I've been working on a project at work recently which is seeing us migrate from CircleCI to GitHub Actions.
+One of the requirements that cropped up was to skip required checks in a workflow which doesn't always need to run, **but** does need to be run in some cases.
+
+Unfortunately, GitHub Actions doesn't have a built-in way to skip required checks based on a condition - if you use the inbuilt path filter, it will still as a pending check, therefore it doesn't meet the merge requirements.
+The fix is to add a new job to your workflow which controls downstream job runs based on a file match condition.
+
+## The setup
+
+Say we have the following workflow, which runs tests in my `internal/` directory:
+
+```yaml
+name: Go Tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest # This can be changed to a larger runner
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Get CPU count
+        run: echo "CPUS=$(nproc 2>/dev/null || echo 2)" >> $GITHUB_ENV
+      - name: Install Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22.5'
+      - name: Run go tests
+        run: go run gotest.tools/gotestsum@latest \
+          --packages"./..." \
+          --junitfile junit.xml
+```
+
+In order to conditionally control downstream jobs, and mark the workflow as passed if the later jobs aren't required, we can add a new job to the workflow:
+
+```yaml
+...
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      go-changed: ${{ steps.changed.outputs.go }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+      - uses: dorny/paths-filter@v3
+        id: changed
+        with:
+          filters: |
+            go:
+              - 'go.{mod|sum}'
+              - 'internal/**/*'
+
+  test:
+    needs:
+      - prepare
+    if: needs.prepare.outputs.go-changed == 'true'
+    ...
+```
+
+Once added, you can then enforce that the 'Go Tests' workflow runs as part of your required checks, but only if the `internal/` directory has changed.

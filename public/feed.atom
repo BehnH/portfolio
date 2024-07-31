@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.behn.dev</id>
     <title>Behn's Blog | RSS Feed</title>
-    <updated>2024-07-27T08:23:58.699Z</updated>
+    <updated>2024-07-31T16:51:23.028Z</updated>
     <generator>Next.js using Feed for Node.js</generator>
     <link rel="alternate" href="https://www.behn.dev"/>
     <link rel="self" href="https://www.behn.dev/feed.atom"/>
@@ -10,6 +10,13 @@
     <logo>https://www.behn.dev/wordmark.png</logo>
     <icon>https://www.behn.dev/favicon/favicon.ico</icon>
     <rights>All rights reserved.</rights>
+    <entry>
+        <title type="html"><![CDATA[How to skip required checks in GitHub Actions]]></title>
+        <id>https://www.behn.dev/blog/skipping-required-checks-with-gha</id>
+        <link href="https://www.behn.dev/blog/skipping-required-checks-with-gha"/>
+        <updated>2024-07-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How you can add a job to your GitHub Actions workflow that will allow you to skip required checks.]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Speeding up Jest on GitHub Actions]]></title>
         <id>https://www.behn.dev/blog/speeding-up-jest-on-github-actions</id>

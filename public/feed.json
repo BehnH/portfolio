@@ -7,6 +7,13 @@
     "icon": "https://www.behn.dev/wordmark.png",
     "items": [
         {
+            "id": "https://www.behn.dev/blog/skipping-required-checks-with-gha",
+            "url": "https://www.behn.dev/blog/skipping-required-checks-with-gha",
+            "title": "How to skip required checks in GitHub Actions",
+            "summary": "How you can add a job to your GitHub Actions workflow that will allow you to skip required checks.",
+            "date_modified": "2024-07-31T00:00:00.000Z"
+        },
+        {
             "id": "https://www.behn.dev/blog/speeding-up-jest-on-github-actions",
             "url": "https://www.behn.dev/blog/speeding-up-jest-on-github-actions",
             "title": "Speeding up Jest on GitHub Actions",
