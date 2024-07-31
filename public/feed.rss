@@ -4,7 +4,7 @@
         <title>Behn's Ramblings | RSS Feed</title>
         <link>https://www.behn.dev</link>
         <description>A blog mostly about tech, but occasionally about what I'm getting up to offline.</description>
-        <lastBuildDate>Wed, 31 Jul 2024 17:24:36 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 31 Jul 2024 17:39:02 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Next.js using Feed for Node.js</generator>
         <image>

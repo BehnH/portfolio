@@ -25,7 +25,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
                 title={"Behn Hayhoe | Ramblings"}
                 description={"A collection of my thoughts, ideas, and ramblings."}
             >
-                <section className="bg-white">
+                <section className="bg-white max-w-6xl mx-auto">
                         <h1 className=" text-5xl md:text-9xl font-bold md:py-20 text-center md:text-left underline decoration-[#bbf7d0] decoration-wavy decoration-4">
                             Ramblings
                         </h1>
