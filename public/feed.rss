@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
     <channel>
-        <title>Behn's Blog | RSS Feed</title>
+        <title>Behn's Ramblings | RSS Feed</title>
         <link>https://www.behn.dev</link>
-        <description>A blog about programming, coffe, life, and other things.</description>
+        <description>A blog mostly about tech, but occasionally about what I'm getting up to offline.</description>
         <lastBuildDate>Wed, 31 Jul 2024 16:51:23 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Next.js using Feed for Node.js</generator>

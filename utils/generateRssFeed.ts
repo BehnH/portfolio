@@ -7,8 +7,8 @@ export default async function generateRssFeed() {
     const siteUrl = 'https://www.behn.dev';
 
     const feedOptions: FeedOptions = {
-        title: 'Behn\'s Blog | RSS Feed',
-        description: 'A blog about programming, coffe, life, and other things.',
+        title: 'Behn\'s Ramblings | RSS Feed',
+        description: 'A blog mostly about tech, but occasionally about what I\'m getting up to offline.',
         id: siteUrl,
         link: siteUrl,
         image: `${siteUrl}/wordmark.png`,
