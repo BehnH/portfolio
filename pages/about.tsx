@@ -21,7 +21,7 @@ export default function Page() {
                                 className="leading-loose text-2xl md:text-4xl font-semibold mx-4"
                                 style={{ lineHeight: "3rem" }}
                             >
-                                Hey 👋, I&apos;m Behn - a passionate Support Engineer and Software Engineer with a strong history in the Technology industry.
+                                Hey 👋, I&apos;m Behn - a Software Engineer with a strong history in the SaaS technology sector.
                             </p>
                         </div>
                     </div>
@@ -130,8 +130,8 @@ export default function Page() {
                             {/* Text area */}
                             <div className="col-span-1 md:col-span-2">
                                 <p className="text-xl text-gray-700 mb-4">
-                                    I&apos;m a passionate Technical Support Engineer and Software engineer - I&apos;ve been really interested in emerging technologies since a very young age, which has helped me to develop a broad range of skills across many different technical disciplines.<br /><br />
-                                    I commonly write code in Typescript as it&apos;s super simple for me to use, however in recent times I have been moving some of my personal projects to GoLang so I can broaden my skills and knowledge.<br /><br />
+                                    I&apos;m an experienced Software engineer - I&apos;ve been really interested in emerging technologies since a very young age, which has helped me to develop a broad range of skills across many different technical disciplines.<br /><br />
+                                    I&apos;m commonly found writing code in Go or Typescript. I also spend a lot of time working in and around Terraform, Docker, Kubernetes, and other DevOps tools.
                                     I&apos;ve developed applications which use MongoDB, MySQL, PostgreSQL, RabbitMQ, Apache Kafka, Redis and many more tools, across many different platforms, such as AWS, Oracle Cloud, Self-hosted Docker and more.<br /><br />
                                     Outside of work, I listen to copious amounts of music, read, play games, and spend time with my dog. Feel free to check out what I&apos;m listening to by heading to my <Link href={'/listening'}>Listening Dashboard</Link>.
                                 </p>
